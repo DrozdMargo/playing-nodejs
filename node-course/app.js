@@ -4,15 +4,19 @@ const _ = require('lodash');
 
 const notes = require('./notes.js');
 
+var command = process.argv[2];
 
-console.log(_.isString(true));
-console.log(_.isString('grty'));
-var filterArray = _.uniq(['as', 1, 'as', 2, 3, 4]);
-console.log(filterArray);
-// var res = notes.addNote();
-// console.log('Result:', notes.add(2, -7));
+console.log('Command: ', command);
+console.log(process.argv);
 
-// var user = os.userInfo();
-
-
-// fs.appendFile('greetings.txt', 'Hello'+ notes.age + ' ' + `hello ${user.username}`);
+if (command === 'add') {
+	console.log('adding new note');
+} else if (command === 'list') {
+	console.log('Listing all notes');
+}else if (command === 'read') {
+	console.log('Reading note');
+} else if (command === 'remove') {
+	console.log('removing note');
+} else {
+	console.log('Command not recognized');
+}
